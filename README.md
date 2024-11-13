@@ -7,8 +7,8 @@
   - `Supplier<T>`
   - `Predicate<T>`
   - `Function<T, R>`
-  - `BiFunction<T, U, R>`
   - `UnaryOperator<T>`
+  - `BinaryOperator<T>`
 - **Lambda Expressions**
 - **Stream API**
 - **Optional**
