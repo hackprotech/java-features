@@ -1,25 +1,27 @@
 package defaultstaticinterface;
 
-
-import java.util.List;
-
 interface Bike {
     void engine();
+
     default void wheels() {
-        System.out.println("Bike have 2 wheels");
+        System.out.println("Bike should always have 2 wheels!");
     }
+
     static void fuel() {
-        System.out.println("Fuel: Petrol");
+        System.out.println("Bike will run on Petrol!");
     }
 }
 
+
 interface SportsBike {
     void engine();
+
     default void wheels() {
-        System.out.println("Sports Bike have 2 wheels");
+        System.out.println("Sports Bike should always have 2 wheels!");
     }
+
     static void fuel() {
-        System.out.println("Fuel: Petrol");
+        System.out.println("Bike will run on Petrol!");
     }
 }
 
@@ -34,7 +36,7 @@ class HondaBike implements Bike, SportsBike {
     @Override
     public void wheels() {
         SportsBike.super.wheels();
-//        System.out.println("It have two wheels with tubeless tyres");
+//        System.out.println("Bike should always have 2 wheels and wheel type is alloy!");
     }
 }
 
@@ -43,6 +45,12 @@ class RoyalEnfieldBike implements Bike {
     @Override
     public void engine() {
         System.out.println("Royal Enfield Bike - 650cc");
+    }
+
+    @Override
+    public void wheels() {
+//        Bike.super.wheels();
+        System.out.println("Bike should always have 2 wheels and wheel type is normal!");
     }
 }
 
@@ -53,11 +61,12 @@ public class DefaultStaticInterface {
         HondaBike hondaBike = new HondaBike();
         hondaBike.engine();
         hondaBike.wheels();
-        Bike.fuel();
 
         RoyalEnfieldBike royalEnfieldBike = new RoyalEnfieldBike();
         royalEnfieldBike.engine();
         royalEnfieldBike.wheels();
+
+        Bike.fuel();
 
     }
 
