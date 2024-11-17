@@ -9,6 +9,7 @@
   - `Function<T, R>`
   - `UnaryOperator<T>`
   - `BinaryOperator<T>`
+- **Anonymous Class [Optional]**
 - **Lambda Expressions**
 - **Stream API**
 - **Optional**
